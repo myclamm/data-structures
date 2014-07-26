@@ -25,6 +25,9 @@ var makeLinkedList = function(){
 
 
   list.removeHead = function(){
+    if(list.head === null){
+      return null;
+    }
     var oldHead = this.head;
     var newHead = this.head.next;
     delete oldHead;
@@ -42,7 +45,7 @@ var makeLinkedList = function(){
          }
       }
       return false;
-    };s
+    };
     return solve(this.head);
 
   };

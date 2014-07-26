@@ -28,14 +28,13 @@ HashTable.prototype.retrieve = function(k){
     if(getBucket[g][0]=== k){
       return getBucket[g][1];
     }
-  }
-return null;
+  } return null;
 
 };
 
 HashTable.prototype.remove = function(k){
   var i = getIndexBelowMaxForKey(k,this._limit);
-  var getBucket = this._storage.get(i);
+  var getBucket = this._storage.get(i)
   for(var z=0;z<getBucket.length;z++){
     if(getBucket[z][0]=== k){
       getBucket.splice(z, 1);
@@ -46,8 +45,17 @@ HashTable.prototype.remove = function(k){
 
 };
 
+var myHash = new HashTable()
+myHash.insert('asfd','bfdfd')
+myHash.insert('cfds','dfds')
+myHash.remove('asfd')
+console.log(myHash.retrieve('cfds'))
 
-
+var arr = []
 /*
  * Complexity: What is the time complexity of the above functions?
  */
+
+
+
+
