@@ -10,9 +10,7 @@ var makeLinkedList = function(){
         this.tail = headAndTail;
       } else{
         var temp = makeNode(value);
-       if (list.head.next === null){
-          this.head.next = temp;
-        }
+
         this.tail.next = temp;
         this.tail = temp;
 

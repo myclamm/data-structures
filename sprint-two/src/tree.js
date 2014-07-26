@@ -1,3 +1,4 @@
+
 var makeTree = function(value){
   var newTree = {};
   newTree.value = value;
@@ -9,25 +10,32 @@ var makeTree = function(value){
 };
 
 
-
-
 var treeMethods = {};
 treeMethods.addChild = function(value){
-//if no children, then push
-//otherwise, push to child
-if(!this.children[0]){
-  this.children.push(value)
-}
-
-  this.children.push(value);
-
+  this.children.push(makeTree(value));
 };
 
 treeMethods.contains = function(target){
-
+// for (var i = 0; i<this.children.length; i++){
+//   if (this.children[i].value === target){
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+  if (this.value === target){ //base case for recursion
+    return true;
+  }
+  for (var i = 0; i<this.children.length; i++){
+    if(this.children[i].contains(target)){ //recurse through for loop for target
+      return true;
+    }
+  }
+  return false;
 };
 
 
 /*
  * Complexity: What is the time complexity of the above functions?
  */
+
